@@ -9,7 +9,7 @@
         <testSourceDirectory>Pdl/src/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>Pdl/src/resources</directory>
+                <directory>Pdl/resources</directory>
             </resource>
         </resources>
         <plugins>

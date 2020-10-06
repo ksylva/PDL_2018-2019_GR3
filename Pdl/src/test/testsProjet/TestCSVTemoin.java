@@ -187,7 +187,7 @@ public class TestCSVTemoin {
      * @return true if generated CSV correpond to hand-made one, else false
      */
     private boolean compareTemoinAndConverted(boolean isHTML, String givenUrl, String givenWantedFile, String givenConvertedFile){
-        process = new ProcessWikiUrl();
+        /*process = new ProcessWikiUrl();
 
         String url = givenUrl;
 
@@ -195,7 +195,7 @@ public class TestCSVTemoin {
 
         process.parseHTML();
         process.parseWikiText();
-        process.convert();
+        process.convert();*/
 
         try {
             FileReader convertedFileReaderHtml = null;
