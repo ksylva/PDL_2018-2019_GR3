@@ -1,12 +1,19 @@
-<configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <withJansi>true</withJansi>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <!--<withJansi>true</withJansi>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{36} - %msg%n</pattern>
-        </encoder>
+        </encoder>-->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%d [%t] %-5p %c - %m%n"/>
+        </layout>
     </appender>
 
-    <root level="trace">
+    <root>
+        <priority value="trace"/>
         <appender-ref ref="STDOUT" />
     </root>
-</configuration>
+</log4j:configuration>

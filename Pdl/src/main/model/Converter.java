@@ -56,6 +56,7 @@ public class Converter {
                         fileWriter.write(tableContent[i].trim());
                     }
                     else {
+                        System.out.println("Ligne "+i+" : "+tableContent[i]);
                         fileWriter.write(tableContent[i].trim() +",");
                     }
                 }

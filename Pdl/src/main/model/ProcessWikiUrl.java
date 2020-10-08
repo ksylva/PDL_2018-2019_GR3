@@ -94,14 +94,14 @@ public class ProcessWikiUrl {
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
-        for(int i = 0; i < listWikiUrl.size(); i++){
-            System.out.println("Treating HTML url : " + listWikiUrl.get(i).getHtmlUrl());
+        for (WikiUrl wikiUrl : listWikiUrl) {
+            System.out.println("Treating HTML url : " + wikiUrl.getHtmlUrl());
 
-            parserHTML.setUrlHtml(listWikiUrl.get(i).getHtmlUrl().trim());
+            parserHTML.setUrlHtml(wikiUrl.getHtmlUrl().trim());
             ArrayList<Table> currentPageTables = parserHTML.parseHtml();
 
-            for(int j = 0; j < currentPageTables.size(); j++){
-                listTable.add(currentPageTables.get(j));
+            for (Table currentPageTable : currentPageTables) {
+                listTable.add(currentPageTable);
                 System.out.println("+1 Table");
             }
         }

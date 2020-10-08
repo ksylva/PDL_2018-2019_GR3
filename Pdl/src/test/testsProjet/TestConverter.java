@@ -134,11 +134,12 @@ public class TestConverter {
             Table table = entry.getKey();
             File file = entry.getValue();
             int nbCorrectLine = 0;
-
+            System.out.println("Les fichiers : "+file);
             try {
                 FileReader f = new FileReader(file);
                 BufferedReader buffered = new BufferedReader(f);
                 String line = buffered.readLine();
+                //System.out.println("Ligne de reference:"+line);
                 int nbColumnRef = getNbCommas(line);
                 line = buffered.readLine();
 
@@ -150,15 +151,21 @@ public class TestConverter {
                     line = buffered.readLine();
                 }
                 buffered.close();
+                //System.out.println("Le fichier parcouru :"+ file);
+                //System.out.println("Le nombre de ligne du CSV :"+ getNbRowsInTheCSV(file));
+                //System.out.println("Le nombre de ligne correcte :"+ nbCorrectLine);
+                //System.exit(0);
 
                 if (nbCorrectLine == getNbRowsInTheCSV(file)-1) {
                     nbFileCorrect++;
                 }
                 else {
                     message = "The CSV file is not valid for the table n°"+table.getNumTable()+" of the page "+table.getTitle()+
-                            " for the "+table.getExtractionType()+ " extraction type";
+                            "_"+table.getNumTable()+" for the "+table.getExtractionType()+ " extraction type";
                     errorsMessage.add(message);
                 }
+                System.out.println("Le nombre de fichiers corrects :"+ nbFileCorrect);
+                //System.exit(0);
             }
             catch (IOException e) {
                 System.out.println (e);
@@ -235,7 +242,9 @@ public class TestConverter {
             FileReader f = new FileReader(file);
             BufferedReader buffered = new BufferedReader(f);
             String line = buffered.readLine();
+
             while (line != null) {
+                //System.out.println("Le contenu ligne "+nbRows+" est :"+ line);
                 nbRows ++;
                 line = buffered.readLine();
             }
