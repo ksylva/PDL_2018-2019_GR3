@@ -94,6 +94,7 @@ public class ParserWikiText extends Parser {
     private ArrayList<String> extractTablesFromPage() {
         ArrayList<String> tablesFromPage = new ArrayList<String>();
         int nbWikiTables = this.countWikiTab();
+        //System.out.println(nbWikiTables);
         for (int i = 1; i <= nbWikiTables; i++) {
             String table = this.getTable();
             if (!table.trim().isEmpty()) {

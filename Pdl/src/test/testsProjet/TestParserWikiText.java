@@ -147,7 +147,10 @@ public class TestParserWikiText {
      */
     @Test
     public void testParseWikiTextNbLign4() {
-        urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_DEX_software&action=edit";
+        //urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_DEX_software&action=edit";
+        //urlWikiText = "https://fr.wikipedia.org/w/index.php?title=Aide:Tableau&action=edit";
+        urlWikiText="https://fr.wikipedia.org/w/index.php?title=ECMAScript&action=edit";
+
         pwt = new ParserWikiText();
         pwt.setUrlWikiText(urlWikiText);
         ArrayList<Table> tabs = pwt.parseWikiText();
@@ -157,7 +160,7 @@ public class TestParserWikiText {
         ) {
             nbRow = tab.getContent().size();
         }
-        assertEquals("We should have 6 rows", 6, nbRow);
+        assertEquals("We should have 2 rows", 14, nbRow);
     }
 
     /**
@@ -166,7 +169,8 @@ public class TestParserWikiText {
      */
     @Test
     public void testParseWikiTextNbLign5() {
-        urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_PSA_systems&action=edit";
+
+        urlWikiText="https://en.wikipedia.org/w/index.php?title=Comparison_of_S.M.A.R.T._tools&action=edit";
         pwt = new ParserWikiText();
         pwt.setUrlWikiText(urlWikiText);
         ArrayList<Table> tabs = pwt.parseWikiText();
@@ -176,7 +180,7 @@ public class TestParserWikiText {
         ) {
             nbRow = tab.getContent().size();
         }
-        assertEquals("We should have 13 rows", 13, nbRow);
+        assertEquals("We should have 12 rows", 12, nbRow);
     }
 
     /**
@@ -275,7 +279,9 @@ public class TestParserWikiText {
      */
     @Test
     public void testParseWikiTextNbCell4() {
-        urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_DEX_software&action=edit";
+
+        //urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_DEX_software&action=edit";
+        urlWikiText = "https://fr.wikipedia.org/w/index.php?title=Facebook&action=edit";
         pwt = new ParserWikiText();
         pwt.setUrlWikiText(urlWikiText);
         ArrayList<Table> tabs = pwt.parseWikiText();
@@ -286,10 +292,13 @@ public class TestParserWikiText {
             it = tab.getContent().values().iterator();
             while (it.hasNext()) {
                 String[] cells = (String[]) it.next();
+                System.out.println(cells.length);
                 nbcell += cells.length;
             }
+
         }
-        assertEquals("We should have 114 cells", 114, nbcell);
+        assertEquals("We should have 165 cells",165 , nbcell);
+
     }
 
     /**
@@ -298,7 +307,8 @@ public class TestParserWikiText {
      */
     @Test
     public void testParseWikiTextNbCell5() {
-        urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_PSA_systems&action=edit";
+        //urlWikiText = "https://en.wikipedia.org/w/index.php?title=Comparison_of_PSA_systems&action=edit";
+        urlWikiText = "https://fr.wikipedia.org/w/index.php?title=Aide:Ins%C3%A9rer_un_tableau_(wikicode,_expert)&action=edit";
         pwt = new ParserWikiText();
         pwt.setUrlWikiText(urlWikiText);
         ArrayList<Table> tabs = pwt.parseWikiText();
@@ -312,7 +322,7 @@ public class TestParserWikiText {
                 nbcell += cells.length;
             }
         }
-        assertEquals("We should have 91 cells", 91, nbcell);
+        assertEquals("We should have 543 cells", 543, nbcell);
     }
 
     /**
