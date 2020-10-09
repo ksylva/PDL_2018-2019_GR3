@@ -95,8 +95,8 @@ The number of errors differs depending on the operating system.the number of err
 | testGetContentHtml | OK |
 | testGetContentWikitext | OK |
 
-***TestCSVTemoin Failed => Generated file does not correspond expected file**
+**TestCSVTemoin Failed => Generated file does not correspond expected file**
   - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
-  -Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
+  - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
   
   
