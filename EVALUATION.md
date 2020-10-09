@@ -100,6 +100,7 @@ The number of errors differs depending on the operating system.
   - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
 
 **TestConverter => AssertionError : mismatch between what we expected and what we have**
+
 There were 4 tests to be done. The result is estimated at 25% of success and 75% of failures.
 The causes of the bugs were :
 
