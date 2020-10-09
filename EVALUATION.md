@@ -129,16 +129,16 @@ The percentage of successful tests is 42%.
 | testParseWikiText1Tab | OK |
 | testParseWikiText8Tab | OK |
 | testParseWikiTextNbLign1 | OK |
-| testParseWikiTextNbLign2| OK |
+| testParseWikiTextNbLign2 | OK |
 | testParseWikiTextNbLign3 | OK |
-| testParseWikiTextNbLign4 | Failed => Assertion Error : <ul><li>Expected : 6 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbLign4 | OK |
 | testParseWikiTextNbLign5 | OK |
 | testParseWikiTextNbLign6 | OK |
 | testParseWikiTextNbCell1 | OK |
 | testParseWikiTextNbCell2 | OK |
 | testParseWikiTextNbCell3 | OK |
-| testParseWikiTextNbCell4 | Failed => Assertion Error : <ul><li>Expected : 114 </li> <li>Actual : 0 </li></ul>  |
-| testParseWikiTextNbCell5 | Failed => Assertion Error : <ul><li>Expected : 91 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbCell4 | OK |
+| testParseWikiTextNbCell5 | OK |
 | testParseWikiTextNbCell6 | OK |
 | **TestProcessWikiUrl**	| |
 | testAddWikiUrlFromFileValid | OK |
