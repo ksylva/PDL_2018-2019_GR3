@@ -135,6 +135,7 @@ First, "addWikiUrlFromFile ()" is called. This function reads "wikiurls.txt" and
 Then, "parseHTML ()" is executed and realizes the HTML extraction. When a Wikipedia table is extracted, a Table object is created, filled with the Wikipedia table content and add to the Table list.
 After, "parseWikiText ()" is executed and realizes the WikiText extraction. When a Wikipedia table is extracted, a Table object is created, filled with the Wikipedia table content and add to the Table list. This object is a common structure which takes the results of our two parsers. This is vey practical in order to compare their results.
 Finally, "convert ()" is called. This methods consits in writing all Table in the list in a csv file.
+Results of extraction are in folder "output". He is not on server. You must have it by executing of project.
 
 ## Special cases
 
