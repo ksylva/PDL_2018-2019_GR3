@@ -57,8 +57,8 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testParseWikiTextNbCell1 | OK |
 | testParseWikiTextNbCell2 | OK |
 | testParseWikiTextNbCell3 | OK |
-| testParseWikiTextNbCell4 | OK |
-| testParseWikiTextNbCell5 | OK |
+| testParseWikiTextNbCell4 | Failed => Assertion Error : <ul><li>Expected : 114 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbCell5 | Failed => Assertion Error : <ul><li>Expected : 91 </li> <li>Actual : 0 </li></ul>  |
 | testParseWikiTextNbCell6 | OK |
 | **TestProcessWikiUrl**	| |
 | testAddWikiUrlFromFileValid | OK |
@@ -69,21 +69,21 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testParseWikiText | OK |
 | **TestConverter**	| |
 | testFileIsCreated | OK  |
-| testCheckNbRows| OK  |
-| testCheckNbColumn| Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 2614 </li></ul>  |
-| testCsvValid | Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 1862 </li></ul>|
+| testCheckNbRows| Failed => Assertion Error : <ul><li>Expected : 2709 </li> <li>Actual : 2683 </li></ul>  |
+| testCheckNbColumn| Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 2629 </li></ul>  |
+| testCsvValid | Failed => Assertion Error : <ul><li>Expected : 2709 </li> <li>Actual : 1976 </li></ul>|
 | **TestCSVTemoin**	| |
-| testTemoinOneHtml  | OK |
-| testTemoinTwoHtml  | OK |
-| testTemoinTreeHtml | OK |
-| testTemoinFourHtml | OK |
-| testTemoinFiveHtml | OK |
-| testTemoinSixHtml  | OK |
-| testTemoinOneWikiText  | OK |
-| testTemoinTreeWikiText | OK |
-| testTemoinFourWikiText | OK |
-| testTemoinFiveWikiText | OK |
-| testTemoinSixWikiText  | OK |
+| testTemoinOneHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinTwoHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinTreeHtml | Failed => Generated file does not correspond expected file |
+| testTemoinFourHtml | Failed => Generated file does not correspond expected file |
+| testTemoinFiveHtml | Failed => Generated file does not correspond expected file |
+| testTemoinSixHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinOneWikiText  | Failed => Generated file does not correspond expected file |
+| testTemoinThreeWikiText | OK |
+| testTemoinFourWikiText | Failed => Generated file does not correspond expected file |
+| testTemoinFiveWikiText | Failed => Generated file does not correspond expected file |
+| testTemoinSixWikiText  | Failed => Generated file does not correspond expected file |
   | **TestTable**	| |
 | testGetTitleHtml | OK |
 | testGetExtractionTypeHtml | OK |
