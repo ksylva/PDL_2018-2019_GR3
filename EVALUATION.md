@@ -15,6 +15,7 @@ Start by opening IntelliJ and close all opened projects. Then get the project wi
 
 The results of extraction must not be upload on remote server. We have add the folder which contains the results of extarction in the ".gitignore"
 The CSV files must be the same when we extract tables from html or wikitext. So, there are no reason to have two witness files : one for csv from html and one for wikitext. Only one witness file should be useful to test both extracted files. 
+The number of errors differs depending on the operating system.the number of errors differs depending on the operating system
 
 
 ## JUNIT Tests
@@ -51,14 +52,14 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testParseWikiTextNbLign1 | OK |
 | testParseWikiTextNbLign2| OK |
 | testParseWikiTextNbLign3 | OK |
-| testParseWikiTextNbLign4 | OK |
+| testParseWikiTextNbLign4 | Failed => Assertion Error : <ul><li>Expected : 6 </li> <li>Actual : 0 </li></ul>  |
 | testParseWikiTextNbLign5 | OK |
 | testParseWikiTextNbLign6 | OK |
 | testParseWikiTextNbCell1 | OK |
 | testParseWikiTextNbCell2 | OK |
 | testParseWikiTextNbCell3 | OK |
-| testParseWikiTextNbCell4 | OK |
-| testParseWikiTextNbCell5 | OK |
+| testParseWikiTextNbCell4 | Failed => Assertion Error : <ul><li>Expected : 114 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbCell5 | Failed => Assertion Error : <ul><li>Expected : 91 </li> <li>Actual : 0 </li></ul>  |
 | testParseWikiTextNbCell6 | OK |
 | **TestProcessWikiUrl**	| |
 | testAddWikiUrlFromFileValid | OK |
@@ -69,21 +70,21 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testParseWikiText | OK |
 | **TestConverter**	| |
 | testFileIsCreated | OK  |
-| testCheckNbRows| OK  |
-| testCheckNbColumn| Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 2614 </li></ul>  |
-| testCsvValid | Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 1862 </li></ul>|
+| testCheckNbRows| Failed => Assertion Error : <ul><li>Expected : 2709 </li> <li>Actual : 2683 </li></ul>  |
+| testCheckNbColumn| Failed => Assertion Error : <ul><li>Expected : 2726 </li> <li>Actual : 2629 </li></ul>  |
+| testCsvValid | Failed => Assertion Error : <ul><li>Expected : 2709 </li> <li>Actual : 1976 </li></ul>|
 | **TestCSVTemoin**	| |
-| testTemoinOneHtml  | OK |
-| testTemoinTwoHtml  | OK |
-| testTemoinTreeHtml | OK |
-| testTemoinFourHtml | OK |
-| testTemoinFiveHtml | OK |
-| testTemoinSixHtml  | OK |
-| testTemoinOneWikiText  | OK |
-| testTemoinTreeWikiText | OK |
-| testTemoinFourWikiText | OK |
-| testTemoinFiveWikiText | OK |
-| testTemoinSixWikiText  | OK |
+| testTemoinOneHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinTwoHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinTreeHtml | Failed => Generated file does not correspond expected file |
+| testTemoinFourHtml | Failed => Generated file does not correspond expected file |
+| testTemoinFiveHtml | Failed => Generated file does not correspond expected file |
+| testTemoinSixHtml  | Failed => Generated file does not correspond expected file |
+| testTemoinOneWikiText  | Failed => Generated file does not correspond expected file |
+| testTemoinThreeWikiText | OK |
+| testTemoinFourWikiText | Failed => Generated file does not correspond expected file |
+| testTemoinFiveWikiText | Failed => Generated file does not correspond expected file |
+| testTemoinSixWikiText  | Failed => Generated file does not correspond expected file |
   | **TestTable**	| |
 | testGetTitleHtml | OK |
 | testGetExtractionTypeHtml | OK |
@@ -94,7 +95,8 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testGetContentHtml | OK |
 | testGetContentWikitext | OK |
 
-***TestCSVTemoin Failed => Generated file does not correspond expected file**
+**TestCSVTemoin Failed => Generated file does not correspond expected file**
   - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
-  -Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
+  - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
+  
   
