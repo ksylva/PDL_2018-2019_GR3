@@ -51,7 +51,7 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 | testParseWikiTextNbLign1 | OK |
 | testParseWikiTextNbLign2| OK |
 | testParseWikiTextNbLign3 | OK |
-| testParseWikiTextNbLign4 | OK |
+| testParseWikiTextNbLign4 | Failed => Assertion Error : <ul><li>Expected : 6 </li> <li>Actual : 0 </li></ul>  |
 | testParseWikiTextNbLign5 | OK |
 | testParseWikiTextNbLign6 | OK |
 | testParseWikiTextNbCell1 | OK |
