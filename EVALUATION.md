@@ -18,3 +18,7 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 
 
 **JUNIT Tests**
+
+***TestCSVTemoin Failed => Generated file does not correspond expected file**
+  - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
+  
