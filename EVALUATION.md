@@ -13,7 +13,7 @@ Start by opening IntelliJ and close all opened projects. Then get the project wi
 
 **DESIGN.md**
 
-The results of extraction must not be upload on remote server. We have add the folder which contains the results of extarction in the .gitignore
+The results of extraction must not be upload on remote server. We have add the folder which contains the results of extarction in the ".gitignore"
 The CSV files must be the same when we extract tables from html or wikitext. So, there are no reason to have two witness files : one for csv from html and one for wikitext. Only one witness file should be useful to test both extracted files. 
 
 
@@ -21,4 +21,5 @@ The CSV files must be the same when we extract tables from html or wikitext. So,
 
 ***TestCSVTemoin Failed => Generated file does not correspond expected file**
   - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
+  -Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
   
