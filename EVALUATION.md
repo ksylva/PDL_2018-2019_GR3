@@ -104,8 +104,7 @@ The number of errors differs depending on the operating system.
 There were 4 tests to be done. The result is estimated at 25% of success and 75% of failures.
 The causes of the bugs were :
 
-  - When we have a table with merged rows or columns we extract it as it is designed, then in this case it is not efficient to make a comparison between the    number of rows and columns of this table with its CSV format because for the conversion to CSV, collspans and rowspans are replaced by empty cells. So that  
-    comparison will alway return an error.
+  - When we have a table with merged rows or columns we extract it as it is designed, then in this case it is not efficient to make a comparison between the    number of rows and columns of this table with its CSV format because for the conversion to CSV, collspans and rowspans are replaced by empty cells. So that comparison will alway return an error.
     
   - There is the ParserWikitext which has regular expressions allowing to capture separators, but, they do not capture all the cases which generates the 
     incompatibility  between the extracted table and its csv format.
