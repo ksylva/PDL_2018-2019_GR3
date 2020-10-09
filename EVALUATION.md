@@ -15,7 +15,7 @@ Start by opening IntelliJ and close all opened projects. Then get the project wi
 
 The results of extraction must not be upload on remote server. We have add the folder which contains the results of extarction in the ".gitignore"
 The CSV files must be the same when we extract tables from html or wikitext. So, there are no reason to have two witness files : one for csv from html and one for wikitext. Only one witness file should be useful to test both extracted files. 
-The number of errors differs depending on the operating system.the number of errors differs depending on the operating system
+The number of errors differs depending on the operating system.
 
 
 ## JUNIT Tests
@@ -98,5 +98,20 @@ The number of errors differs depending on the operating system.the number of err
 **TestCSVTemoin Failed => Generated file does not correspond expected file**
   - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
   - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
+
+**TestConverter => AssertionError : mismatch between what we expected and what we have**
+There were 4 tests to be done. The result is estimated at 25% of success and 75% of failures.
+The causes of the bugs were :
+
+  - When we have a table with merged rows or columns we extract it as it is designed, then in this case it is not efficient to make a comparison between the    
+    number of rows and columns of this table with its CSV format because for the conversion to CSV, collspans and rowspans are replaced by empty cells. So that  
+    comparison will alway return an error.
+    
+  - There is the ParserWikitext which has regular expressions allowing to capture separators, but, they do not capture all the cases which generates the 
+    incompatibility  between the extracted table and its csv format.
+    
+The proposed resolution is that when you get the number of columns or rows of the table, you have to get the maximum among the columns/rows and you try to do the same for the csv in order to make the right comparisons.
+And for ParserWikiText we're still looking for an improvement of regular expressions that will allow us to capture all cases.
+
   
   
