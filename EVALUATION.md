@@ -95,26 +95,8 @@ The number of errors differs depending on the operating system.
 | testGetContentHtml | OK |
 | testGetContentWikitext | OK |
 
-**TestCSVTemoin Failed => Generated file does not correspond expected file**
-  - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
-  - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
 
-**TestConverter => AssertionError : mismatch between what we expected and what we have**
-There were 4 tests to be done. The result is estimated at 25% of success and 75% of failures.
-The causes of the bugs were :
-
-  - When we have a table with merged rows or columns we extract it as it is designed, then in this case it is not efficient to make a comparison between the    
-    number of rows and columns of this table with its CSV format because for the conversion to CSV, collspans and rowspans are replaced by empty cells. So that  
-    comparison will alway return an error.
-    
-  - There is the ParserWikitext which has regular expressions allowing to capture separators, but, they do not capture all the cases which generates the 
-    incompatibility  between the extracted table and its csv format.
-    
-The proposed resolution is that when you get the number of columns or rows of the table, you have to get the maximum among the columns/rows and you try to do the same for the csv in order to make the right comparisons.
-And for ParserWikiText we're still looking for an improvement of regular expressions that will allow us to capture all cases.
-
- After owers corrections, we obtain this:
- ## JUNIT Tests
+ ## After our corrections, we obtain this:
 
 ## Tests results
 
@@ -148,14 +130,14 @@ And for ParserWikiText we're still looking for an improvement of regular express
 | testParseWikiTextNbLign1 | OK |
 | testParseWikiTextNbLign2| OK |
 | testParseWikiTextNbLign3 | OK |
-| testParseWikiTextNbLign4 | Failed => Assertion Error : <ul><li>Expected : 6 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbLign4 | OK |
 | testParseWikiTextNbLign5 | OK |
 | testParseWikiTextNbLign6 | OK |
 | testParseWikiTextNbCell1 | OK |
 | testParseWikiTextNbCell2 | OK |
 | testParseWikiTextNbCell3 | OK |
-| testParseWikiTextNbCell4 | Failed => Assertion Error : <ul><li>Expected : 114 </li> <li>Actual : 0 </li></ul>  |
-| testParseWikiTextNbCell5 | Failed => Assertion Error : <ul><li>Expected : 91 </li> <li>Actual : 0 </li></ul>  |
+| testParseWikiTextNbCell4 | OK |
+| testParseWikiTextNbCell5 | OK |
 | testParseWikiTextNbCell6 | OK |
 | **TestProcessWikiUrl**	| |
 | testAddWikiUrlFromFileValid | OK |
@@ -190,4 +172,23 @@ And for ParserWikiText we're still looking for an improvement of regular express
 | testGetNumTabWikiText | OK |
 | testGetContentHtml | OK |
 | testGetContentWikitext | OK |
+  
+
+**TestCSVTemoin Failed => Generated file does not correspond expected file**
+  - The tests failed because the wikipedia pages where tables are extracted has been updated. So the whitness files was not up to date.
+  - Under windows, in addition to the errors announced above, we also note the problem of special characters which are replaced by question marks in the extracted files 
+
+**TestConverter => AssertionError : mismatch between what we expected and what we have**
+There were 4 tests to be done. The result is estimated at 25% of success and 75% of failures.
+The causes of the bugs were :
+
+  - When we have a table with merged rows or columns we extract it as it is designed, then in this case it is not efficient to make a comparison between the    
+    number of rows and columns of this table with its CSV format because for the conversion to CSV, collspans and rowspans are replaced by empty cells. So that  
+    comparison will alway return an error.
+    
+  - There is the ParserWikitext which has regular expressions allowing to capture separators, but, they do not capture all the cases which generates the 
+    incompatibility  between the extracted table and its csv format.
+    
+The proposed resolution is that when you get the number of columns or rows of the table, you have to get the maximum among the columns/rows and you try to do the same for the csv in order to make the right comparisons.
+And for ParserWikiText we're still looking for an improvement of regular expressions that will allow us to capture all cases.
   
