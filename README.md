@@ -14,7 +14,6 @@ We read and analyze two Wikipedia page formats :
 * HTML
 * Wikitext
 
-
 ## Objectives
 
 3 expected results :
