@@ -21,3 +21,7 @@ Then get the project with the HTTPS link :
   - Open the Maven panel (on the right) and click the refresh button if no project is shown in
   - Unfold the project in the Maven panel
   - In "LifeCycle" select "Clean" and "Compile" to run the project
+
+Authors
+
+Sylvanus KONAN, Jean-Théodore ESSOH, Mariama TAHA, Ange SIBOMANA, Bénédicte AHOUA
